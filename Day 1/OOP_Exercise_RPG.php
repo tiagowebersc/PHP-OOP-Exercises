@@ -1,7 +1,16 @@
-<?php 
+<!DOCTYPE html>
+<html lang="en">
 
-/* 
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
 
+<body>
+	<?php
+	/* 
 	Imagine a Role-Playing Game.
 	There are several types of characters: Humans, Orcs and Elves.
 
@@ -77,10 +86,32 @@
 
 	Change your function to 'add'/'remove'/'display' an equipement.
 	Now it will add/remove/display to the inventory.
+*/
 
+	require_once 'inc/Character.php';
+	require_once 'inc/Equipment.php';
+	$orc = new Character("Orc", "Goldfolly");
+	$elf = new Character("Elf", "Alaglossa");
+	$human = new Character("Human", "Podal Gledz");
+	//var_dump($orc);
+	//var_dump($elf);
+	//var_dump($human);
 
+	echo $orc;
+	echo $elf;
+	echo $human;
 
+	$sword = new equipment("Sword", "Death Sword", 10, -2, 0); // 10 atk bonus, 0 def bonus, 0 life bonus;
+	$jewel = new equipment("Other", "Grace Necklace", 0, 0, 5); // 0 atk bonus, 0 def bonus, 5 life bonus;
+	$armor = new equipment("Armor", "Vest of Demonic Hell", -1, 6, 5);
 
+	echo '<br><br>';
+	$orc->addEquipment($sword);
+	$orc->addEquipment($jewel);
+	$orc->addEquipment($armor);
+	//var_dump($orc);
+	echo $orc;
+	?>
+</body>
 
-
-
+</html>

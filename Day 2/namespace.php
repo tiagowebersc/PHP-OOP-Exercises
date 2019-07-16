@@ -9,6 +9,6 @@ class MyClass
 {
     public function doStuff()
     {
-        echo "MyClass doing some stuff";
+        echo "MyClass doing some stuff<br>";
     }
 }

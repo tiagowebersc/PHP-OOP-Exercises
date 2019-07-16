@@ -86,6 +86,12 @@
 
 	Change your function to 'add'/'remove'/'display' an equipement.
 	Now it will add/remove/display to the inventory.
+
+	-- Step 6 :
+
+	Create a method call 'getStats()'
+	This method will display all the stats of my Character.
+	It should take into account the bonus of equipments.
 */
 
 	require_once 'inc/Character.php';
@@ -111,6 +117,10 @@
 	$orc->addEquipment($armor);
 	//var_dump($orc);
 	echo $orc;
+	$orc->removeEquipment($armor);
+	echo $orc;
+
+
 	?>
 </body>
 

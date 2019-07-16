@@ -3,10 +3,10 @@ class Character
 {
     private $type;
     private $name;
-    private $health;
-    private $attack;
-    private $defense;
-    private $warCry;
+    private $health = 100;
+    private $attack = 10;
+    private $defense = 5;
+    private $warCry = "Attaaaaaack!";
     private $equipments;
 
     public function __construct($type, $name)
@@ -14,10 +14,6 @@ class Character
         $this->type = $type;
         if (array_search($type, [1 => 'Human', 2 => 'Orc', 3 => 'Elf'])) {
             $this->name = $name;
-            $this->health = 100;
-            $this->attack = 10;
-            $this->defense = 5;
-            $this->warCry = "Attaaaaaack!";
             $this->equipments = [];
             if ($type === 'Orc') {
                 $this->health -= 10;
@@ -61,13 +57,13 @@ class Character
                 break;
         }
 
-        $this->equipments[count($this->equipments)] = $equipment;
+        $this->equipments[] = $equipment;
     }
 
     public function removeEquipment($equipment)
     {
-        if (array_search($equipment, $this->equipments)) {
-            unset($equipment);
+        if ($idx = array_search($equipment, $this->equipments)) {
+            unset($this->equipments[$idx]);
         } else {
             echo "This character don't have this equipmento to be removed!<br>";
         }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
 
 Overview : 
@@ -7,24 +7,35 @@ Overview :
 
 	In the Flowers table, we will record: The name of the flowers and their prices
 	In the Users table: The email address and hash password
-
-
+//! -------------------------------------------------!
+create database flower_shop;
+use flower_shop;
+create table flowers (
+idFlower int(10) not null auto_increment primary key,
+name varchar(50) not null,
+price double(6,2) not null
+);
+create table Users(
+idUser int(10) not null auto_increment primary key,
+email varchar(50) not null,
+hashPassword varchar(60) not null
+);
+//! -------------------------------------------------!
 Step 1: Connecting users
 	We will not take into account the creation of the users, they will be created manually in the database.
-	
 	We will create a class \Flowers\User and a class \Flowers\Db\UserManager, to manage the connection.
 
-	Connection page will look like this :
+	Connection page will look like this:
 */
 
-if(isset($_POST['login']) && isset($_POST['password'])) {
-    $userManager = new \Flowers\UserManager();
-    $userLogged = $userManager->login($_POST['login'], $_POST['password']);
+if (isset($_POST['login']) && isset($_POST['password'])) {
+	$userManager = new \Flowers\UserManager();
+	$userLogged = $userManager->login($_POST['login'], $_POST['password']);
 
-    if(!empty($userLogged)) {
-        $_SESSION['user']['mail']   = $userLogged->getMail();
-        $_SESSION['user']['id']     = $userLogged->getId();
-    }
+	if (!empty($userLogged)) {
+		$_SESSION['user']['mail']   = $userLogged->getMail();
+		$_SESSION['user']['id']     = $userLogged->getId();
+	}
 }
 
 /*
@@ -42,3 +53,6 @@ Step 3 :
 
 
  ?>
+
+
+

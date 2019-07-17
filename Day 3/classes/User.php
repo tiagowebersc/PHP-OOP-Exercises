@@ -26,4 +26,7 @@ class User
 namespace Flowers\Db;
 
 class UserManager
-{ }
+{
+    public function login($id, $password)
+    { }
+}

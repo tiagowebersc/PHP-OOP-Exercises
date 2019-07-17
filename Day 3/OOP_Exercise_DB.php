@@ -7,7 +7,7 @@ Overview :
 
 	In the Flowers table, we will record: The name of the flowers and their prices
 	In the Users table: The email address and hash password
-//! -------------------------------------------------!
+//! --sql commands-----------------------------------!
 create database flower_shop;
 use flower_shop;
 create table flowers (
@@ -53,6 +53,7 @@ Step 3 :
 
 
  ?>
+
 
 
 

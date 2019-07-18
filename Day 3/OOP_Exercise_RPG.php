@@ -1,6 +1,4 @@
 <?php 
-
-
 /*
 
 	Continue/Using the RPG exercise.
@@ -43,5 +41,3 @@
 
 	For the 'relous' : you can change the game is designed.
 */
-
- ?>

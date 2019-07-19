@@ -66,3 +66,5 @@ var_dump($prep->execute());
 $name = ' Flower 2';
 $price = 54.32;
 var_dump($prep->execute());
+
+// Ctrl Shift P
